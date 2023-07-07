@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chia Proof of Space Construction</title>
+        <title>Chik Proof of Space Construction</title>
         <style>
 </style>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
@@ -24,18 +24,18 @@
         
     </head>
     <body class="vscode-light">
-        <h1 id="Chia-Proof-of-Space-Construction">Chia Proof of Space Construction</h1>
+        <h1 id="Chik-Proof-of-Space-Construction">Chik Proof of Space Construction</h1>
 <p>Version: 1.1</p>
 <p>Updated: July 31, 2020</p>
 <h2 id="Introduction">Introduction</h2>
 <p>In order to create a secure blockchain consensus algorithm using disk space a Proof of Space is scheme is necessary.
 This document describes a practical construction of Proofs of Space based on <a href="https://eprint.iacr.org/2017/893.pdf">Beyond Hellman’s Time-Memory Trade-Offs
 with Applications to Proofs of Space</a> [1].
-We use the techniques laid out in that paper, extend it from 2 to 7 tables, and tweak it to make it efficient and secure for use in the Chia Blockchain.
+We use the techniques laid out in that paper, extend it from 2 to 7 tables, and tweak it to make it efficient and secure for use in the Chik Blockchain.
 The document is divided into three main sections: <a href="#What-is-Proof-of-Space">What</a> (mathematical definition of a proof of space), <a href="#How-do-we-implement-Proof-of-Space">How</a> (how to implement proof of space), and <a href="#Construction-Explanation-Why">Why</a> (motivation and explanation of the construction) sections.
 The <a href="https://eprint.iacr.org/2017/893.pdf">Beyond Hellman</a> paper can be read first for more mathematical background.</p>
 <ul>
-<li><a href="#Chia-Proof-of-Space-Construction">Chia Proof of Space Construction</a>
+<li><a href="#Chik-Proof-of-Space-Construction">Chik Proof of Space Construction</a>
 <ul>
 <li><a href="#Introduction">Introduction</a></li>
 <li><a href="#What-is-Proof-of-Space">What is Proof of Space?</a>
@@ -289,7 +289,7 @@ f_7(x_1, \dots, x_{64}) &amp;= \underset{\text{fsize}}{\text{trunc}}(\mathcal{A}
 <h4 id="Plotting-Tables-Concepts">Plotting Tables (Concepts)</h4>
 <p><em>Plotting</em> is our term for the method of writing data to disk such that we can quickly retrieve 1 or more proofs (if they exist) for a given challenge.
 The <em>plot</em> refers to the contents of the file on disk. While proof retrieval must be fast, the plotting process can take time, as it is only done once, by the prover.
-In the Chia Blockchain, these provers are referred to as <em>farmers</em>, since they create and maintain the plots.
+In the Chik Blockchain, these provers are referred to as <em>farmers</em>, since they create and maintain the plots.
 That is, a farmer creates and efficiently stores data on disk, for a given <em>plot seed</em>, that allows them to find proofs <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathsize="1.44em"><mi mathvariant="normal">Π</mi></mstyle></mrow><annotation encoding="application/x-tex">\Large{\Pi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord sizing reset-size6 size8"><span class="mord">Π</span></span></span></span></span> that meet the above requirements.
 We first discuss general concepts related to the problem of plotting.</p>
 <h5 id="Tables">Tables</h5>
@@ -881,9 +881,9 @@ If the whole proof needs to be fetched, it will cost around 64 disk lookups. Usi
 On a successful proof, the verifier can also compute the quality string by converting the proof from proof ordering to plot ordering <a href="#proof-quality-string">Proof Quality String</a>.</p>
 <h2 id="Construction-Explanation-Why">Construction Explanation (Why)</h2>
 <h3 id="Blockchain-consensus-summary">Blockchain consensus summary</h3>
-<p>The motivation for Chia's proof of space construction is for use as an alternative resource to Proof of Work in a Namakoto-consensus style blockchain. Space miners (referred to as farmers) allocate space on their hard drives, respond to challenges, and occasionally win rewards.
+<p>The motivation for Chik's proof of space construction is for use as an alternative resource to Proof of Work in a Namakoto-consensus style blockchain. Space miners (referred to as farmers) allocate space on their hard drives, respond to challenges, and occasionally win rewards.
 Challenges are random 256 values that result from each block.
-In Chia's blockchain, this challenge is the unpredictable output of a Verifiable Delay Function that is required for each block.</p>
+In Chik's blockchain, this challenge is the unpredictable output of a Verifiable Delay Function that is required for each block.</p>
 <p>In order for such a protocol to be secure against 51% attacks and other consensus attacks, it is clear that an attacker should not be able to create a proof of space for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> space, using <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>&lt;</mo><mo>&lt;</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">A &lt;&lt; S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> space.
 The attackers advantage over an honest farmer that implements only the main optimizations should be small.
 This should be true even if the attacker has a significant amount of processing power and parallelism, as well as fast hard drives.</p>
@@ -1114,7 +1114,7 @@ If a farmer has multiple plots, and wants to delete one of them, the least effec
 with Applications to Proofs of Space (2017) <a href="https://eprint.iacr.org/2017/893.pdf">https://eprint.iacr.org/2017/893.pdf</a></p>
 <p>[2] Philippe Oechslin: Making a Faster Cryptanalytic Time-Memory
 Trade-Off (2003) <a href="https://lasec.epfl.ch/pub/lasec/doc/Oech03.pdf">https://lasec.epfl.ch/pub/lasec/doc/Oech03.pdf</a></p>
-<p>[3] Krzysztof Pietrzak, Bram Cohen: Chia Greenpaper (2019) <a href="https://www.chia.net/assets/ChiaGreenPaper.pdf">https://www.chia.net/assets/ChiaGreenPaper.pdf</a></p>
+<p>[3] Krzysztof Pietrzak, Bram Cohen: Chik Greenpaper (2019) <a href="https://www.chiknetwork.com/assets/ChikGreenPaper.pdf">https://www.chiknetwork.com/assets/ChikGreenPaper.pdf</a></p>
 <p>[4] Mart Simisker: Asymmetrical Number Systems (2017) <a href="https://courses.cs.ut.ee/MTAT.07.022/2017_fall/uploads/Main/mart-report-f17.pdf">https://courses.cs.ut.ee/MTAT.07.022/2017_fall/uploads/Main/mart-report-f17.pdf</a></p>
 <p>[5] Daniel J. Bernstein: The ChaCha family of stream ciphers (2008) <a href="https://cr.yp.to/chacha.html">https://cr.yp.to/chacha.html</a></p>
 

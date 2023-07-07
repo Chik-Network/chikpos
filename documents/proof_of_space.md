@@ -1,4 +1,4 @@
-# Chia Proof of Space Construction
+# Chik Proof of Space Construction
 
 Version: 1.1
 
@@ -9,12 +9,12 @@ Updated: July 31, 2020
 In order to create a secure blockchain consensus algorithm using disk space a Proof of Space is scheme is necessary.
 This document describes a practical construction of Proofs of Space based on [Beyond Hellman’s Time-Memory Trade-Offs
  with Applications to Proofs of Space](https://eprint.iacr.org/2017/893.pdf) [1].
-We use the techniques laid out in that paper, extend it from 2 to 7 tables, and tweak it to make it efficient and secure for use in the Chia Blockchain.
+We use the techniques laid out in that paper, extend it from 2 to 7 tables, and tweak it to make it efficient and secure for use in the Chik Blockchain.
 The document is divided into three main sections: [What](#What-is-Proof-of-Space) (mathematical definition of a proof of space), [How](#How-do-we-implement-Proof-of-Space) (how to implement proof of space), and [Why](#Construction-Explanation-Why) (motivation and explanation of the construction) sections.
 The [Beyond Hellman](https://eprint.iacr.org/2017/893.pdf) paper can be read first for more mathematical background.
 
 
-- [Chia Proof of Space Construction](#Chia-Proof-of-Space-Construction)
+- [Chik Proof of Space Construction](#Chik-Proof-of-Space-Construction)
   - [Introduction](#Introduction)
   - [What is Proof of Space?](#What-is-Proof-of-Space)
       - [Definitions](#Definitions)
@@ -278,7 +278,7 @@ Proof of space is composed of three algorithms: [plotting](#Plotting), [proving]
 
 *Plotting* is our term for the method of writing data to disk such that we can quickly retrieve 1 or more proofs (if they exist) for a given challenge.
 The *plot* refers to the contents of the file on disk. While proof retrieval must be fast, the plotting process can take time, as it is only done once, by the prover.
-In the Chia Blockchain, these provers are referred to as *farmers*, since they create and maintain the plots.
+In the Chik Blockchain, these provers are referred to as *farmers*, since they create and maintain the plots.
 That is, a farmer creates and efficiently stores data on disk, for a given *plot seed*, that allows them to find proofs $\Large{\Pi}$ that meet the above requirements.
 We first discuss general concepts related to the problem of plotting.
 
@@ -792,9 +792,9 @@ On a successful proof, the verifier can also compute the quality string by conve
 
 ### Blockchain consensus summary
 
-The motivation for Chia's proof of space construction is for use as an alternative resource to Proof of Work in a Namakoto-consensus style blockchain. Space miners (referred to as farmers) allocate space on their hard drives, respond to challenges, and occasionally win rewards.
+The motivation for Chik's proof of space construction is for use as an alternative resource to Proof of Work in a Namakoto-consensus style blockchain. Space miners (referred to as farmers) allocate space on their hard drives, respond to challenges, and occasionally win rewards.
 Challenges are random 256 values that result from each block.
-In Chia's blockchain, this challenge is the unpredictable output of a Verifiable Delay Function that is required for each block.
+In Chik's blockchain, this challenge is the unpredictable output of a Verifiable Delay Function that is required for each block.
 
 In order for such a protocol to be secure against 51% attacks and other consensus attacks, it is clear that an attacker should not be able to create a proof of space for $S$ space, using $A << S$ space.
 The attackers advantage over an honest farmer that implements only the main optimizations should be small.
@@ -1138,7 +1138,7 @@ with Applications to Proofs of Space (2017) https://eprint.iacr.org/2017/893.pdf
 [2] Philippe Oechslin: Making a Faster Cryptanalytic Time-Memory
 Trade-Off (2003) https://lasec.epfl.ch/pub/lasec/doc/Oech03.pdf
 
-[3] Krzysztof Pietrzak, Bram Cohen: Chia Greenpaper (2019) https://www.chia.net/assets/ChiaGreenPaper.pdf
+[3] Krzysztof Pietrzak, Bram Cohen: Chik Greenpaper (2019) https://www.chiknetwork.com/assets/ChikGreenPaper.pdf
 
 [4] Mart Simisker: Asymmetrical Number Systems (2017) https://courses.cs.ut.ee/MTAT.07.022/2017_fall/uploads/Main/mart-report-f17.pdf
 

@@ -90,7 +90,7 @@ class get_pybind_include(object):
 
 ext_modules = [
     Extension(
-        "chiapos",
+        "chikpos",
         [
             "lib/FiniteStateEntropy/lib/entropy_common.c",
             "lib/FiniteStateEntropy/lib/fse_compress.c",
@@ -185,15 +185,15 @@ class BuildExt(build_ext):
 
 if platform.system() == "Windows":
     setup(
-        name="chiapos",
+        name="chikpos",
         author="Mariano Sorgente",
-        author_email="mariano@chia.net",
-        description="Chia proof of space plotting, proving, and verifying (wraps C++)",
+        author_email="mariano@chiknetwork.com",
+        description="Chik proof of space plotting, proving, and verifying (wraps C++)",
         license="Apache License",
         python_requires=">=3.7",
         long_description=open("README.md").read(),
         long_description_content_type="text/markdown",
-        url="https://github.com/Chia-Network/chiapos",
+        url="https://github.com/Chik-Network/chikpos",
         setup_requires=["pybind11>=2.10.0"],
         tests_require=["pytest"],
         ext_modules=ext_modules,
@@ -202,17 +202,17 @@ if platform.system() == "Windows":
     )
 else:
     setup(
-        name="chiapos",
+        name="chikpos",
         author="Mariano Sorgente",
-        author_email="mariano@chia.net",
-        description="Chia proof of space plotting, proving, and verifying (wraps C++)",
+        author_email="mariano@chiknetwork.com",
+        description="Chik proof of space plotting, proving, and verifying (wraps C++)",
         license="Apache License",
         python_requires=">=3.7",
         long_description=open("README.md").read(),
         long_description_content_type="text/markdown",
-        url="https://github.com/Chia-Network/chiapos",
+        url="https://github.com/Chik-Network/chikpos",
         tests_require=["pytest"],
-        ext_modules=[CMakeExtension("chiapos", ".")],
+        ext_modules=[CMakeExtension("chikpos", ".")],
         cmdclass=dict(build_ext=CMakeBuild),
         zip_safe=False,
     )

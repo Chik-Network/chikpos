@@ -29,9 +29,9 @@ using std::experimental::optional;
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(chiapos, m)
+PYBIND11_MODULE(chikpos, m)
 {
-    m.doc() = "Chia Proof of Space";
+    m.doc() = "Chik Proof of Space";
 
     py::class_<DiskPlotter>(m, "DiskPlotter")
         .def(py::init<>())

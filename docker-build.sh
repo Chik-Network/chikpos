@@ -1,3 +1,3 @@
 #!/bin/sh
-docker build -t chiapos:dev .
+docker build -t chikpos:dev .
 

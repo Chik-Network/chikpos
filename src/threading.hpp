@@ -2,8 +2,8 @@
 // Created by Mariano Sorgente on 2020/09/27.
 //
 
-#ifndef CHIAPOS_THREADING_HPP
-#define CHIAPOS_THREADING_HPP
+#ifndef CHIKPOS_THREADING_HPP
+#define CHIKPOS_THREADING_HPP
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
@@ -65,4 +65,4 @@ namespace Sem {
 };
 
 //        std::cout << ptd->index << " waited 0" << std::endl;
-#endif  // CHIAPOS_THREADING_HPP
+#endif  // CHIKPOS_THREADING_HPP

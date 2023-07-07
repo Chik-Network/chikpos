@@ -1,16 +1,16 @@
-# Chia Proof of Space
-![Build](https://github.com/Chia-Network/chiapos/workflows/Build/badge.svg)
-![PyPI](https://img.shields.io/pypi/v/chiapos?logo=pypi)
-![PyPI - Format](https://img.shields.io/pypi/format/chiapos?logo=pypi)
-![GitHub](https://img.shields.io/github/license/Chia-Network/chiapos?logo=Github)
+# Chik Proof of Space
+![Build](https://github.com/Chik-Network/chikpos/workflows/Build/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/chikpos?logo=pypi)
+![PyPI - Format](https://img.shields.io/pypi/format/chikpos?logo=pypi)
+![GitHub](https://img.shields.io/github/license/Chik-Network/chikpos?logo=Github)
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/Chia-Network/chiapos.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Chia-Network/chiapos/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Chia-Network/chiapos.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Chia-Network/chiapos/context:python)
-[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/Chia-Network/chiapos.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Chia-Network/chiapos/context:cpp)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Chik-Network/chikpos.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Chik-Network/chikpos/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Chik-Network/chikpos.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Chik-Network/chikpos/context:python)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/Chik-Network/chikpos.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Chik-Network/chikpos/context:cpp)
 
-Chia's proof of space is written in C++. Includes a plotter, prover, and
+Chik's proof of space is written in C++. Includes a plotter, prover, and
 verifier. It exclusively runs on 64 bit architectures. Read the
-[Proof of Space document](https://www.chia.net/assets/Chia_Proof_of_Space_Construction_v1.1.pdf) to
+[Proof of Space document](https://www.chiknetwork.com/assets/Chik_Proof_of_Space_Construction_v1.1.pdf) to
 learn about what proof of space is and how it works.
 
 ## C++ Usage Instructions
@@ -94,18 +94,18 @@ them with a source wheel on PyPi. See `.github/workflows/build.yml`. CMake uses
 [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html)
 to download [pybind11](https://github.com/pybind/pybind11). Building is then
 managed by [cibuildwheel](https://github.com/joerick/cibuildwheel). Further
-installation is then available via `pip install chiapos` e.g.
+installation is then available via `pip install chikpos` e.g.
 
 ## Contributing and workflow
-Contributions are welcome and more details are available in chia-blockchain's
-[CONTRIBUTING.md](https://github.com/Chia-Network/chia-blockchain/blob/main/CONTRIBUTING.md).
+Contributions are welcome and more details are available in chik-blockchain's
+[CONTRIBUTING.md](https://github.com/Chik-Network/chik-blockchain/blob/main/CONTRIBUTING.md).
 
 The main branch is usually the currently released latest version on PyPI.
-Note that at times chiapos will be ahead of the release version that
-chia-blockchain requires in it's main/release version in preparation for a
-new chia-blockchain release. Please branch or fork main and then create a
+Note that at times chikpos will be ahead of the release version that
+chik-blockchain requires in it's main/release version in preparation for a
+new chik-blockchain release. Please branch or fork main and then create a
 pull request to the main branch. Linear merging is enforced on main and
 merging requires a completed review. PRs will kick off a GitHub actions ci build
-and analysis of chiapos at
-[lgtm.com](https://lgtm.com/projects/g/Chia-Network/chiapos/?mode=list). Please
+and analysis of chikpos at
+[lgtm.com](https://lgtm.com/projects/g/Chik-Network/chikpos/?mode=list). Please
 make sure your build is passing and that it does not increase alerts at lgtm.

@@ -1,4 +1,4 @@
-// Copyright 2020 Chia Network Inc
+// Copyright 2020 Chik Network Inc
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef SRC_CPP_CHIA_FILESYSTEM_HPP_
-#define SRC_CPP_CHIA_FILESYSTEM_HPP_
+#ifndef SRC_CPP_CHIK_FILESYSTEM_HPP_
+#define SRC_CPP_CHIK_FILESYSTEM_HPP_
 
 #ifdef __APPLE__
 // std::filesystem is not supported on Mojave
@@ -34,4 +34,4 @@ namespace fs = std::filesystem;
 #endif
 #endif
 
-#endif // SRC_CPP_CHIA_FILESYSTEM_HPP_
+#endif // SRC_CPP_CHIK_FILESYSTEM_HPP_

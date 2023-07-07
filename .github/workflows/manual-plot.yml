@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       upstream_branch:
-        description: 'chia pos branch name to use'
+        description: 'chik pos branch name to use'
         required: true
         default: 'main'
       instance_name_tag:
         description: 'name tag to apply to new instance'
         required: true
-        default: 'chia-test-orphan'
+        default: 'chik-test-orphan'
       commit_sha:
         description: 'commit sha to pull other than head'
         required: false
@@ -50,4 +50,4 @@ jobs:
     #${{ secrets.REPO_ADMIN }}
     - name: Plot
       run: |
-        curl -XPOST -H "Authorization: token ${{ secrets.WEBHOOK_CREDENTIAL }}" -H "Accept: application/vnd.github.v3+json" -H "Content-Type: application/json" https://api.github.com/repos/Chia-Network/chia-plotter/actions/workflows/chia-plotter.yml/dispatches --data '{"ref": "main", "inputs": {  "upstream_branch": "${{ github.event.inputs.upstream_branch }}", "instance_name_tag": "${{ github.event.inputs.instance_name_tag }}", "commit_sha": "${{ github.event.inputs.commit_sha}}", "ksize": "${{ github.event.inputs.k_size }}", "count": "${{ github.event.inputs.count }}"  } }'
+        curl -XPOST -H "Authorization: token ${{ secrets.WEBHOOK_CREDENTIAL }}" -H "Accept: application/vnd.github.v3+json" -H "Content-Type: application/json" https://api.github.com/repos/Chik-Network/chik-plotter/actions/workflows/chik-plotter.yml/dispatches --data '{"ref": "main", "inputs": {  "upstream_branch": "${{ github.event.inputs.upstream_branch }}", "instance_name_tag": "${{ github.event.inputs.instance_name_tag }}", "commit_sha": "${{ github.event.inputs.commit_sha}}", "ksize": "${{ github.event.inputs.k_size }}", "count": "${{ github.event.inputs.count }}"  } }'

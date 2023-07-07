@@ -1,4 +1,4 @@
-// Copyright 2018 Chia Network Inc
+// Copyright 2018 Chik Network Inc
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 #include <string>
 #include <vector>
 
-#include "chia_filesystem.hpp"
+#include "chik_filesystem.hpp"
 
 #include "./bits.hpp"
 #include "./calculate_bucket.hpp"

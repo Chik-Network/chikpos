@@ -1,3 +1,3 @@
 #!/bin/sh
-docker run -it --rm chiapos:dev /app/RunTests
+docker run -it --rm chikpos:dev /app/RunTests
 

@@ -13,9 +13,9 @@ finaldir = "plots/final"
 
 """
 This script polls time, memory and temporary directory space used while
-running ./ProofOfSpace from the C++ binary build of chiapos. It assumes
-you are in the chiapos/build directory. If plotting large plots you should
-ln -s a temp and final directory into chiapos/build/plots.
+running ./ProofOfSpace from the C++ binary build of chikpos. It assumes
+you are in the chikpos/build directory. If plotting large plots you should
+ln -s a temp and final directory into chikpos/build/plots.
 It takes one argument to specify the k size to plot.
 """
 

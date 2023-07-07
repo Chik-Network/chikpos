@@ -1,7 +1,7 @@
 //
 // Created by Mariano Sorgente on 2020/09/28.
 //
-// Copyright 2018 Chia Network Inc
+// Copyright 2018 Chik Network Inc
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -112,4 +112,4 @@ public:
     }
 };
 
-#endif  // CHIAPOS_ENTRY_SIZES_HPP
+#endif  // CHIKPOS_ENTRY_SIZES_HPP
