@@ -95,10 +95,15 @@ jobs:
               runs-on:
                 arm: [macOS, ARM64]
                 intel: [macos-latest]
-            python:
-              major-dot-minor: '3.7'
-              cibw-build: 'cp37-*'
-              matrix: '3.7'
+            arch:
+              name: ARM
+              matrix: arm
+          - os:
+              name: Ubuntu
+              matrix: ubuntu
+              runs-on:
+                arm: [ Linux, ARM64 ]
+                intel: [ ubuntu-latest ]
             arch:
               name: ARM
               matrix: arm
