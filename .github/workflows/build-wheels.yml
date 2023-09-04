@@ -101,10 +101,18 @@ jobs:
             arch:
               name: ARM
               matrix: arm
+          - os:
+              name: macOS
+              matrix: macos
+              runs-on:
+                arm: [ macOS, ARM64 ]
+            arch:
+              name: ARM
+              matrix: arm
 
     steps:
     - name: Clean workspace
-      uses: Chia-Network/actions/clean-workspace@main
+      uses: Chik-Network/actions/clean-workspace@main
 
     - name: Checkout code
       uses: actions/checkout@v3
@@ -113,11 +121,11 @@ jobs:
 
     - name: Set Env
       if: env.RUNNER_ARCH != 'ARM64'
-      uses: Chia-Network/actions/setjobenv@main
+      uses: Chik-Network/actions/setjobenv@main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: Chia-Network/actions/setup-python@main
+    - uses: Chik-Network/actions/setup-python@main
       with:
         python-version: ${{ matrix.python.major-dot-minor }}
 
@@ -170,14 +178,14 @@ jobs:
 
     steps:
     - name: Clean workspace
-      uses: Chia-Network/actions/clean-workspace@main
+      uses: Chik-Network/actions/clean-workspace@main
 
     - name: Checkout code
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
-    - uses: Chia-Network/actions/setup-python@main
+    - uses: Chik-Network/actions/setup-python@main
       with:
         python-version: ${{ matrix.python.major-dot-minor }}
 
@@ -213,14 +221,14 @@ jobs:
 
     steps:
     - name: Clean workspace
-      uses: Chia-Network/actions/clean-workspace@main
+      uses: Chik-Network/actions/clean-workspace@main
 
     - name: Checkout code
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
-    - uses: Chia-Network/actions/setup-python@main
+    - uses: Chik-Network/actions/setup-python@main
       with:
         python-version: ${{ matrix.python.major-dot-minor }}
 
@@ -259,7 +267,7 @@ jobs:
 
     steps:
     - name: Clean workspace
-      uses: Chia-Network/actions/clean-workspace@main
+      uses: Chik-Network/actions/clean-workspace@main
 
     - name: Checkout code
       uses: actions/checkout@v3
@@ -267,11 +275,11 @@ jobs:
         fetch-depth: 0
 
     - name: Set Env
-      uses: Chia-Network/actions/setjobenv@main
+      uses: Chik-Network/actions/setjobenv@main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: Chia-Network/actions/setup-python@main
+    - uses: Chik-Network/actions/setup-python@main
       with:
         python-version: ${{ matrix.python.major-dot-minor }}
 

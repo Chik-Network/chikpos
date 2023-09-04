@@ -1,4 +1,4 @@
-// Copyright 2018 Chia Network Inc
+// Copyright 2018 Chik Network Inc
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@
     #include "GreenReaperPortable.h"
 #endif
 
-#define CHIA_PLOT_V2_MAGIC       0x544F4C50ul   // "PLOT"
-#define CHIA_PLOT_VERSION_2_0_0  2
+#define CHIK_PLOT_V2_MAGIC       0x544F4C50ul   // "PLOT"
+#define CHIK_PLOT_VERSION_2_0_0  2
 
 
 struct plot_header {
@@ -329,12 +329,12 @@ public:
         SafeRead(disk_file, magic_2_bytes, 4);
         uint32_t magic_2_result;
         memcpy(&magic_2_result, magic_2_bytes, sizeof(magic_2_result));
-        if (magic_2_result == CHIA_PLOT_V2_MAGIC) {
+        if (magic_2_result == CHIK_PLOT_V2_MAGIC) {
             uint8_t version_bytes[4];
             SafeRead(disk_file, version_bytes, 4);
             uint32_t version_result;
             memcpy(&version_result, version_bytes, sizeof(version_result));
-            if (version_result == CHIA_PLOT_VERSION_2_0_0) {
+            if (version_result == CHIK_PLOT_VERSION_2_0_0) {
                 version = 2;
             }
             else {

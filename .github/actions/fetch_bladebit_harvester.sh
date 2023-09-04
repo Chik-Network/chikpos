@@ -23,13 +23,13 @@ fi
 
 ## Change this if including a new bladebit release
 artifact_ver="v3.0.0"
-artifact_base_url="https://github.com/Chia-Network/bladebit/releases/download/v3.0.0"
+artifact_base_url="https://github.com/Chik-Network/bladebit/releases/download/v3.0.0"
 
-linux_arm_sha256="5a53d82c2cc22172bfa2267ea9fb53126a527eba7bafd03ddf5503913a61f70c"
-linux_x86_sha256="3cdbcf127126d7c61f6da715b25ef73a8420778dd34d56e82ed1865d7a1ebfeb"
+linux_arm_sha256="0d0c92514d99e3c0f287fd3c47789e8b8c01484a56fd25c32be090f89d5b5494"
+linux_x86_sha256="be99d0707bf02bf7f3244985ee2153414df9082cdb8e15f112d2fa45f00b9b46"
 macos_arm_sha256="325150951e83be4ee8690be996e6fde0776ff4cca89e39111c97f0aae3f93bf3"
-macos_x86_sha256="718ab50a19ea3a8f064f2d09df38720cbb7d89667b599f57f2bca3cdf41c18e9"
-windows_sha256="f3e14d02daafaa8e3666ab4666220d3b2859b1c10254bddb38a69da83cc899c5"
+macos_x86_sha256="e862f87aa93ec473d16ca6a2ebff5e294e4db5e477baa1dcd33b04841441d92f"
+windows_sha256="c6b3636b5261cb1345168432e69675e169302cd73d7626841cb6aebf56c98e2b"
 ## End changes
 
 artifact_ext="tar.gz"
