@@ -11,7 +11,7 @@ if(CCACHE_PROGRAM)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif()
 
-project(chikpos C CXX ASM)
+project(chiapos C CXX ASM)
 
 # CMake 3.14+
 include(FetchContent)
@@ -45,7 +45,7 @@ endif()
 if (${CP_BUILD_BLADEBIT_HARVESTER})
   FetchContent_Declare(
     bladebit
-    GIT_REPOSITORY https://github.com/Chik-Network/bladebit.git
+    GIT_REPOSITORY https://github.com/Chia-Network/bladebit.git
     GIT_TAG        cuda-compression
   )
 
@@ -158,7 +158,7 @@ set(BLAKE3_SRC
 )
 ENDIF()
 
-pybind11_add_module(chikpos ${CMAKE_CURRENT_SOURCE_DIR}/python-bindings/chikpos.cpp src/chacha8.c ${BLAKE3_SRC})
+pybind11_add_module(chiapos ${CMAKE_CURRENT_SOURCE_DIR}/python-bindings/chiapos.cpp src/chacha8.c ${BLAKE3_SRC})
 
 add_executable(ProofOfSpace
     src/cli.cpp
@@ -191,10 +191,10 @@ add_library(uint128 STATIC uint128_t/uint128_t.cpp)
 target_include_directories(uint128 PUBLIC uint128_t)
 
 target_compile_features(fse PUBLIC cxx_std_17)
-target_compile_features(chikpos PUBLIC cxx_std_17)
+target_compile_features(chiapos PUBLIC cxx_std_17)
 # target_compile_features(RunTests PUBLIC cxx_std_17)
 
-target_link_libraries(chikpos PRIVATE fse Threads::Threads
+target_link_libraries(chiapos PRIVATE fse Threads::Threads
   $<$<CXX_COMPILER_ID:MSVC>:uint128>
   $<$<NOT:$<PLATFORM_ID:Darwin,OpenBSD,FreeBSD,Windows>>:stdc++fs>
 )
@@ -229,19 +229,19 @@ if (${CP_LINK_BLADEBIT_HARVESTER})
     ${CMAKE_SOURCE_DIR}/libs/green_reaper/lib
   )
 
-  target_compile_definitions(chikpos PUBLIC ${bb_defs})
+  target_compile_definitions(chiapos PUBLIC ${bb_defs})
   target_compile_definitions(ProofOfSpace PUBLIC ${bb_defs})
   target_compile_definitions(RunTests PUBLIC ${bb_defs})
 
-  target_link_libraries(chikpos PUBLIC ${bb_libs})
+  target_link_libraries(chiapos PUBLIC ${bb_libs})
   target_link_libraries(ProofOfSpace PUBLIC ${bb_libs})
   target_link_libraries(RunTests PUBLIC ${bb_libs})
 
-  target_link_directories(chikpos PUBLIC ${CMAKE_SOURCE_DIR}/libs/green_reaper/lib)
+  target_link_directories(chiapos PUBLIC ${CMAKE_SOURCE_DIR}/libs/green_reaper/lib)
   target_link_directories(ProofOfSpace PUBLIC ${CMAKE_SOURCE_DIR}/libs/green_reaper/lib)
   target_link_directories(RunTests PUBLIC ${CMAKE_SOURCE_DIR}/libs/green_reaper/lib)
   
-  set_property(TARGET chikpos APPEND PROPERTY BUILD_RPATH "$ORIGIN")
+  set_property(TARGET chiapos APPEND PROPERTY BUILD_RPATH "$ORIGIN")
   set_property(TARGET ProofOfSpace APPEND PROPERTY BUILD_RPATH "$ORIGIN")
   set_property(TARGET RunTests APPEND PROPERTY BUILD_RPATH "$ORIGIN")
 endif()
