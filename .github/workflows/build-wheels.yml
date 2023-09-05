@@ -64,17 +64,17 @@ jobs:
               arm: manylinux2014
               intel: manylinux2014
             matrix: '3.10'
-          - major-dot-minor: '3.11'
-            cibw-build: 'cp311-*'
-            manylinux:
-              arm: manylinux2014
-              intel: manylinux2014
-            matrix: '3.11'
+#          - major-dot-minor: '3.11'
+#            cibw-build: 'cp311-*'
+#            manylinux:
+#              arm: manylinux2014
+#              intel: manylinux2014
+#            matrix: '3.11'
         arch:
           - name: ARM
             matrix: arm
-          - name: Intel
-            matrix: intel
+#          - name: Intel
+#            matrix: intel
         exclude:
           # Only partial entries are required here by GitHub Actions so generally I
           # only specify the `matrix:` entry.  The super linter complains so for now
