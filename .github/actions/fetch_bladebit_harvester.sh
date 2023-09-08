@@ -26,10 +26,10 @@ artifact_ver="v3.0.0"
 artifact_base_url="https://github.com/Chik-Network/bladebit/releases/download/v3.0.0"
 
 linux_arm_sha256="0d0c92514d99e3c0f287fd3c47789e8b8c01484a56fd25c32be090f89d5b5494"
-linux_x86_sha256="be99d0707bf02bf7f3244985ee2153414df9082cdb8e15f112d2fa45f00b9b46"
+linux_x86_sha256="0b80d7b800ceb1254897ee64d069ba264a7556bb229d76f31026cfc64a7599d7"
 macos_arm_sha256="325150951e83be4ee8690be996e6fde0776ff4cca89e39111c97f0aae3f93bf3"
-macos_x86_sha256="e862f87aa93ec473d16ca6a2ebff5e294e4db5e477baa1dcd33b04841441d92f"
-windows_sha256="c6b3636b5261cb1345168432e69675e169302cd73d7626841cb6aebf56c98e2b"
+macos_x86_sha256="0bf92038a9a40b1de66ebb91a9f7f290a242612a9b660dae7fd83d51255fc9af"
+windows_sha256="29b433f2c20176e5f28c65161c84d0a582e66a90529304b72715d1bc27c47711"
 ## End changes
 
 artifact_ext="tar.gz"
