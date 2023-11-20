@@ -22,14 +22,14 @@ if [[ "${host_arch}" != "arm64" ]] && [[ "${host_arch}" != "x86-64" ]]; then
 fi
 
 ## Change this if including a new bladebit release
-artifact_ver="v3.0.0"
-artifact_base_url="https://github.com/Chik-Network/bladebit/releases/download/v3.0.0"
+artifact_ver="v3.1.0"
+artifact_base_url="https://github.com/Chik-Network/bladebit/releases/download/${artifact_ver}"
 
-linux_arm_sha256="0d0c92514d99e3c0f287fd3c47789e8b8c01484a56fd25c32be090f89d5b5494"
-linux_x86_sha256="0b80d7b800ceb1254897ee64d069ba264a7556bb229d76f31026cfc64a7599d7"
-macos_arm_sha256="325150951e83be4ee8690be996e6fde0776ff4cca89e39111c97f0aae3f93bf3"
-macos_x86_sha256="0bf92038a9a40b1de66ebb91a9f7f290a242612a9b660dae7fd83d51255fc9af"
-windows_sha256="29b433f2c20176e5f28c65161c84d0a582e66a90529304b72715d1bc27c47711"
+linux_arm_sha256="8c7b29af00408b5a928f310ff682dd0965748cc7893ab635e6e93e88f3b3a60d"
+linux_x86_sha256="bbfd69ec4c97c294b3a0d1ed332ec84157ef98b65dc3f442a34be526f489f7f2"
+macos_arm_sha256="03958b94ad9d01de074b5a9a9d86a51bd2246c0eab5529c5886bb4bbc4168e0b"
+macos_x86_sha256="5e3eb7a7b35f3bb3059c9844497340f97a94bd337e70614d581ddc49087e8d0f"
+windows_sha256="64ff6d7526fd2d113be7a716802cc1607dbbb507bc20c7346c5b48e46b7b9906"
 ## End changes
 
 artifact_ext="tar.gz"
