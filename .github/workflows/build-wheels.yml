@@ -3,7 +3,7 @@ name: build - check - upload
 on:
   push:
     branches:
-    #- main
+    - main1
   release:
     types: [published]
   pull_request:
@@ -70,6 +70,12 @@ jobs:
               arm: manylinux2014
               intel: manylinux2014
             matrix: '3.11'
+          - major-dot-minor: '3.12'
+            cibw-build: 'cp312-*'
+            manylinux:
+              arm: manylinux2014
+              intel: manylinux2014
+            matrix: '3.12'
         arch:
           - name: ARM
             matrix: arm
@@ -149,7 +155,7 @@ jobs:
         CIBW_MANYLINUX_X86_64_IMAGE: ${{ matrix.python.manylinux['intel'] }}
         CIBW_ARCHS_MACOS: ${{ matrix.os.cibw-archs-macos[matrix.arch.matrix] }}
       run:
-        pipx run --spec='cibuildwheel==2.11.2' cibuildwheel --output-dir dist 2>&1
+        pipx run --spec='cibuildwheel==2.16.2' cibuildwheel --output-dir dist 2>&1
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
