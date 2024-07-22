@@ -4,7 +4,7 @@
 ![PyPI](https://img.shields.io/pypi/v/chikpos?logo=pypi)
 ![PyPI - Format](https://img.shields.io/pypi/format/chikpos?logo=pypi)
 ![GitHub](https://img.shields.io/github/license/Chik-Network/chikpos?logo=Github)
-
+[![Coverage Status](https://coveralls.io/repos/github/Chik-Network/chikpos/badge.svg?branch=main)](https://coveralls.io/github/Chik-Network/chikpos?branch=main)
 
 Chik's proof of space is written in C++. Includes a plotter, prover, and
 verifier. It exclusively runs on 64 bit architectures. Read the

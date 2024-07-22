@@ -27,7 +27,7 @@ artifact_base_url="https://github.com/Chik-Network/bladebit/releases/download/${
 
 linux_arm_sha256="8c7b29af00408b5a928f310ff682dd0965748cc7893ab635e6e93e88f3b3a60d"
 linux_x86_sha256="bbfd69ec4c97c294b3a0d1ed332ec84157ef98b65dc3f442a34be526f489f7f2"
-macos_arm_sha256="03958b94ad9d01de074b5a9a9d86a51bd2246c0eab5529c5886bb4bbc4168e0b"
+macos_arm_sha256="8d7088ec577bdde07e19de57cb752139b77207965310856c93dc0719d012059e"
 macos_x86_sha256="5e3eb7a7b35f3bb3059c9844497340f97a94bd337e70614d581ddc49087e8d0f"
 windows_sha256="64ff6d7526fd2d113be7a716802cc1607dbbb507bc20c7346c5b48e46b7b9906"
 ## End changes
