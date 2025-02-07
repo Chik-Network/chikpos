@@ -53,13 +53,6 @@ if (${CP_BUILD_BLADEBIT_HARVESTER})
   FetchContent_MakeAvailable(bladebit)
 endif()
 
-FetchContent_Declare(
-  gulrak
-  GIT_REPOSITORY https://github.com/gulrak/filesystem.git
-  GIT_TAG        v1.5.14
-)
-FetchContent_MakeAvailable(gulrak)
-
 set(FSE_LIB ${CMAKE_CURRENT_SOURCE_DIR}/lib/FiniteStateEntropy/lib)
 set(FSE_FILES
     ${FSE_LIB}/fse_compress.c
@@ -72,7 +65,6 @@ include_directories(
   ${INCLUDE_DIRECTORIES}
   ${CMAKE_CURRENT_SOURCE_DIR}/../lib/include
   ${cxxopts_SOURCE_DIR}/include
-  ${gulrak_SOURCE_DIR}/include/ghc
   ${CMAKE_CURRENT_SOURCE_DIR}/../lib/FiniteStateEntropy/lib
   ${CMAKE_CURRENT_SOURCE_DIR}/src
   ${CMAKE_CURRENT_SOURCE_DIR}/test
@@ -146,6 +138,7 @@ endif()
 
 set(BLAKE3_SRC ${blake3_SOURCE_DIR}/c)
 set(BLAKE3_INCLUDE_DIR ${blake3_SOURCE_DIR}/c)
+set_target_properties(blake3 PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib$<0:>")
 target_link_libraries(chikpos PRIVATE blake3)
 target_link_libraries(ProofOfSpace PRIVATE blake3)
 include_directories(
@@ -163,8 +156,9 @@ option(BUILD_STATIC_CHIKPOS_LIBRARY "Build chikpos static library (verify-only)"
 IF (BUILD_STATIC_CHIKPOS_LIBRARY)
   message("Build chikpos static library (verify-only)")
   add_library(chikpos_static STATIC src/chacha8.c c-bindings/wrapper.cpp)
-  target_link_libraries(chikpos_static PUBLIC blake3)
-  target_include_directories(chikpos_static PUBLIC lib/include)
+  target_link_libraries(chikpos_static PRIVATE blake3 $<$<CXX_COMPILER_ID:MSVC>:uint128>)
+  target_include_directories(chikpos_static PUBLIC lib/include uint128_t)
+  set_target_properties(chikpos_static PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib$<0:>")
 ENDIF()
 
 FetchContent_Declare(
@@ -196,6 +190,7 @@ find_package(Threads REQUIRED)
 
 add_library(uint128 STATIC uint128_t/uint128_t.cpp)
 target_include_directories(uint128 PUBLIC uint128_t)
+set_target_properties(uint128 PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib$<0:>")
 
 target_compile_features(fse PUBLIC cxx_std_17)
 target_compile_features(chikpos PUBLIC cxx_std_17)
@@ -218,6 +213,7 @@ target_link_libraries(RunTests PRIVATE fse Threads::Threads Catch2::Catch2WithMa
   $<$<CXX_COMPILER_ID:MSVC>:uint128>
   $<$<NOT:$<PLATFORM_ID:Darwin,OpenBSD,FreeBSD,Windows>>:stdc++fs>
 )
+
 
 if (${CP_LINK_BLADEBIT_HARVESTER})
 

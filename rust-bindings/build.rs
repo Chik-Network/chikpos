@@ -27,19 +27,15 @@ fn main() {
 
     println!(
         "cargo:rustc-link-search=native={}",
-        dst.join("build").to_str().unwrap()
-    );
-    println!(
-        "cargo:rustc-link-search=native={}",
-        dst.join("build")
-            .join("_deps")
-            .join("blake3-build")
-            .to_str()
-            .unwrap()
+        dst.join("build").join("lib").to_str().unwrap()
     );
 
-    println!("cargo:rustc-link-lib=static=blake3");
     println!("cargo:rustc-link-lib=static=chikpos_static");
+    println!("cargo:rustc-link-lib=static=blake3");
+
+    if cfg!(target_os = "windows") {
+        println!("cargo:rustc-link-lib=static=uint128");
+    }
 
     let bindings = bindgen::Builder::default()
         .header(
