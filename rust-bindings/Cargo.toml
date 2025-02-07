@@ -12,8 +12,8 @@ repository = "https://github.com/Chik-Network/chikpos"
 link-cplusplus = "1.0.9"
 
 [build-dependencies]
-bindgen = "0.69.4"
-cmake = "0.1.50"
+bindgen = "0.71.1"
+cmake = "0.1.53"
 
 [dev-dependencies]
 hex = "0.4.3"
