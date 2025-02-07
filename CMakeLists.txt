@@ -199,6 +199,11 @@ target_include_directories(uint128 PUBLIC uint128_t)
 
 target_compile_features(fse PUBLIC cxx_std_17)
 target_compile_features(chikpos PUBLIC cxx_std_17)
+if (WIN32)
+  # workaround for constexpr mutex constructor change in MSVC 2022
+  # https://stackoverflow.com/questions/78598141/first-stdmutexlock-crashes-in-application-built-with-latest-visual-studio
+  target_compile_definitions(chikpos PUBLIC _DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR)
+endif()
 # target_compile_features(RunTests PUBLIC cxx_std_17)
 
 target_link_libraries(chikpos PRIVATE fse Threads::Threads
