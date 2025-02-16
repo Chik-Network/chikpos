@@ -1,6 +1,6 @@
 [package]
 name = "chikpos"
-version = "2.0.9"
+version = "2.0.10"
 edition = "2021"
 license = "Apache-2.0"
 description = "Bindings to the chikpos C++ library."
