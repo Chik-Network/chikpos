@@ -1,6 +1,6 @@
 [package]
 name = "chikpos"
-version = "2.0.10"
+version = "2.0.11"
 edition = "2021"
 license = "Apache-2.0"
 description = "Bindings to the chikpos C++ library."
@@ -9,11 +9,11 @@ homepage = "https://github.com/Chik-Network/chikpos"
 repository = "https://github.com/Chik-Network/chikpos"
 
 [dependencies]
-link-cplusplus = "1.0.9"
+link-cplusplus = "1.0.10"
 
 [build-dependencies]
 bindgen = "0.71.1"
-cmake = "0.1.53"
+cmake = "0.1.54"
 
 [dev-dependencies]
 hex = "0.4.3"
